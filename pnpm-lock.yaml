@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@glidejs/glide':
+    specifier: ^3.6.2
+    version: 3.6.2
   sass:
     specifier: ^1.78.0
     version: 1.78.0
@@ -236,6 +239,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@glidejs/glide@3.6.2:
+    resolution: {integrity: sha512-oXw7In0IZV69PC0PChQakY+yh+UnqIb5+zfVuEIzub6Kkfl1foo7TAhr2PZXPzihOG9YS57t8wvdzBFEZ0aPVA==}
+    dev: false
 
   /@isaacs/cliui@8.0.2:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
