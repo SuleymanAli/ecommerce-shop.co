@@ -9,33 +9,35 @@
   <body>
     <!-- Notification -->
     <section class="bg-black text-white text-center py-2.5">
-      <div class="container relative">
-        <p class="text-xs sm:text-sm">
-          Sign up and get 20% off to your first order.
-          <a href="#" class="font-medium underline">Sign Up Now</a>
-        </p>
-        <span
-          class="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer hidden sm:flex"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+      <div class="container">
+        <div class="relative">
+          <p class="text-xs sm:text-sm">
+            Sign up and get 20% off to your first order.
+            <a href="#" class="font-medium underline">Sign Up Now</a>
+          </p>
+          <span
+            class="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer hidden sm:flex"
           >
-            <path
-              d="M16.2882 14.9617C16.4644 15.1378 16.5633 15.3767 16.5633 15.6258C16.5633 15.8749 16.4644 16.1137 16.2882 16.2898C16.1121 16.466 15.8733 16.5649 15.6242 16.5649C15.3751 16.5649 15.1362 16.466 14.9601 16.2898L9.99997 11.3281L5.03825 16.2883C4.86213 16.4644 4.62326 16.5633 4.37418 16.5633C4.12511 16.5633 3.88624 16.4644 3.71012 16.2883C3.534 16.1122 3.43506 15.8733 3.43506 15.6242C3.43506 15.3751 3.534 15.1363 3.71012 14.9602L8.67184 10L3.71168 5.03828C3.53556 4.86216 3.43662 4.62329 3.43662 4.37422C3.43662 4.12515 3.53556 3.88628 3.71168 3.71016C3.8878 3.53404 4.12668 3.43509 4.37575 3.43509C4.62482 3.43509 4.86369 3.53404 5.03981 3.71016L9.99997 8.67188L14.9617 3.70938C15.1378 3.53326 15.3767 3.43431 15.6257 3.43431C15.8748 3.43431 16.1137 3.53326 16.2898 3.70938C16.4659 3.8855 16.5649 4.12437 16.5649 4.37344C16.5649 4.62251 16.4659 4.86138 16.2898 5.0375L11.3281 10L16.2882 14.9617Z"
-              fill="white"
-            />
-          </svg>
-        </span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.2882 14.9617C16.4644 15.1378 16.5633 15.3767 16.5633 15.6258C16.5633 15.8749 16.4644 16.1137 16.2882 16.2898C16.1121 16.466 15.8733 16.5649 15.6242 16.5649C15.3751 16.5649 15.1362 16.466 14.9601 16.2898L9.99997 11.3281L5.03825 16.2883C4.86213 16.4644 4.62326 16.5633 4.37418 16.5633C4.12511 16.5633 3.88624 16.4644 3.71012 16.2883C3.534 16.1122 3.43506 15.8733 3.43506 15.6242C3.43506 15.3751 3.534 15.1363 3.71012 14.9602L8.67184 10L3.71168 5.03828C3.53556 4.86216 3.43662 4.62329 3.43662 4.37422C3.43662 4.12515 3.53556 3.88628 3.71168 3.71016C3.8878 3.53404 4.12668 3.43509 4.37575 3.43509C4.62482 3.43509 4.86369 3.53404 5.03981 3.71016L9.99997 8.67188L14.9617 3.70938C15.1378 3.53326 15.3767 3.43431 15.6257 3.43431C15.8748 3.43431 16.1137 3.53326 16.2898 3.70938C16.4659 3.8855 16.5649 4.12437 16.5649 4.37344C16.5649 4.62251 16.4659 4.86138 16.2898 5.0375L11.3281 10L16.2882 14.9617Z"
+                fill="white"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
     </section>
     <!-- Header -->
-    <header class="container flex items-center py-5 sm:py-6">
+    <header class="container flex items-center py-5 sm:py-6 flex-wrap">
       <!-- Menu On Mobile -->
-      <span class="self-center mr-4">
+      <span class="self-center mr-4 lg:hidden cursor-pointer" id="menu-btn">
         <svg
           width="24"
           height="24"
@@ -51,13 +53,15 @@
       </span>
       <!-- Logo -->
       <div class="md:basis-2/12">
-        <p class="uppercase font-bold font-serif text-2xl sm:text-3xl">
+        <p
+          class="text-2xl sm:text-3xl uppercase font-bold font-serif h-[34px] !leading-none"
+        >
           SHOP.CO
         </p>
       </div>
       <!-- Navigation -->
-      <nav class="hidden md:basis-8/12 sm:flex items-center">
-        <ul class="flex space-x-6 px-10">
+      <nav class="hidden md:basis-8/12 lg:flex items-center">
+        <ul class="flex space-x-3 xl:space-x-6 px-10">
           <li>Shop</li>
           <li>On Sale</li>
           <li>New Arrivals</li>
@@ -132,15 +136,53 @@
           </svg>
         </span>
       </div>
+      <!-- Navigation On Mobile -->
+      <nav
+        class="w-full lg:hidden transition-max-height duration-500 ease-in max-h-0 overflow-hidden"
+        id="mobile-menu"
+      >
+        <div class="relative block my-4">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21.7959 20.2041L17.3437 15.75C18.6787 14.0104 19.3019 11.8282 19.087 9.64607C18.8722 7.4639 17.8353 5.44516 16.1867 3.99937C14.5382 2.55357 12.4014 1.78899 10.2098 1.86071C8.01829 1.93244 5.93607 2.8351 4.38558 4.38559C2.83509 5.93608 1.93243 8.0183 1.8607 10.2098C1.78898 12.4014 2.55356 14.5382 3.99936 16.1867C5.44515 17.8353 7.46389 18.8722 9.64606 19.087C11.8282 19.3019 14.0104 18.6787 15.75 17.3438L20.2059 21.8006C20.3106 21.9053 20.4348 21.9883 20.5715 22.0449C20.7083 22.1016 20.8548 22.1307 21.0028 22.1307C21.1508 22.1307 21.2973 22.1016 21.4341 22.0449C21.5708 21.9883 21.695 21.9053 21.7997 21.8006C21.9043 21.696 21.9873 21.5717 22.044 21.435C22.1006 21.2983 22.1298 21.1517 22.1298 21.0037C22.1298 20.8558 22.1006 20.7092 22.044 20.5725C21.9873 20.4358 21.9043 20.3115 21.7997 20.2069L21.7959 20.2041ZM4.12499 10.5C4.12499 9.23915 4.49888 8.0066 5.19938 6.95824C5.89987 5.90988 6.89551 5.09278 8.06039 4.61027C9.22527 4.12776 10.5071 4.00151 11.7437 4.2475C12.9803 4.49348 14.1162 5.10064 15.0078 5.9922C15.8994 6.88376 16.5065 8.01967 16.7525 9.2563C16.9985 10.4929 16.8722 11.7747 16.3897 12.9396C15.9072 14.1045 15.0901 15.1001 14.0418 15.8006C12.9934 16.5011 11.7608 16.875 10.5 16.875C8.80977 16.8733 7.18927 16.2011 5.99411 15.0059C4.79894 13.8107 4.12673 12.1902 4.12499 10.5Z"
+                fill="black"
+                fill-opacity="0.4"
+              />
+            </svg>
+          </span>
+          <input
+            type="text"
+            placeholder="Search for products..."
+            class="bg-[#F0F0F0] px-12 py-3.5 rounded-large w-full"
+          />
+        </div>
+        <ul class="flex flex-col space-y-3">
+          <!-- Search -->
+
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">On Sale</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Brands</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <!-- Hero Section -->
-      <section class="bg-[#F2F0F1] sm:h-[660px] overflow-hidden">
-        <div class="container flex h-full max-sm:flex-wrap">
+      <section class="bg-[#F2F0F1] xl:h-[660px] overflow-hidden">
+        <div class="container flex h-full max-lg:flex-wrap">
           <!-- Hero: Content -->
-          <div class="sm:basis-1/2 pt-10 sm:py-24 sm:pr-6">
+          <div
+            class="lg:basis-4/12 xl:basis-1/2 pt-10 lg:py-12 xl:py-24 sm:pr-6 sm:text-center lg:text-left"
+          >
             <h1
-              class="mb-5 sm:mb-8 font-bold text-4xl sm:text-6xl uppercase font-serif"
+              class="mb-5 sm:mb-8 font-bold text-4xl lg:text-6xl uppercase font-serif"
             >
               Find Clothes That Matches Your Style
             </h1>
@@ -154,27 +196,33 @@
             >
               Shop Now
             </button>
-            <div class="flex sm:space-x-8 max-sm:flex-wrap justify-center">
-              <div class="border-r border-black/10 pr-8">
+            <div class="flex lg:space-x-8 max-lg:flex-wrap justify-center">
+              <div
+                class="max-[400px]:border-none border-r border-black/10 pr-8"
+              >
                 <div class="font-bold text-4xl">200+</div>
                 <div class="text-black-light">International Brands</div>
               </div>
-              <div class="sm:border-r border-black/10 ml-8 sm:pr-8">
+              <div
+                class="lg:border-r border-black/10 max-[400px]:ml-0 ml-8 lg:pr-8"
+              >
                 <div class="font-bold text-4xl">2,000+</div>
                 <div class="text-black-light">High-Quality Products</div>
               </div>
-              <div class="basis-full sm:basis-auto mt-4 sm:mt-0 text-center">
+              <div class="basis-full lg:basis-auto mt-4 lg:mt-0 text-center">
                 <div class="font-bold text-4xl">30,000+</div>
                 <div class="text-black-light">Happy Customers</div>
               </div>
             </div>
           </div>
           <!-- Hero: Image -->
-          <div class="sm:w-1/2 mx-auto h-[448px] sm:h-full sm:-mr-8">
+          <div
+            class="lg:basis-8/12 xl:basis-1/2 mt-auto h-[448px] flex sm:h-full -mx-4 lg:mx-auto"
+          >
             <img
               src="/images/home.png"
               alt=""
-              class="object-cover w-full h-full overflow-visible"
+              class="object-cover w-full h-full overflow-hidden mt-auto"
             />
           </div>
         </div>
@@ -183,7 +231,7 @@
       <section class="bg-black">
         <div class="container">
           <div
-            class="flex max-sm:flex-wrap justify-evenly items-center text-white py-10 sm:py-11 gap-y-5 gap-x-3 sm:gap-0"
+            class="flex max-lg:flex-wrap justify-evenly items-center text-white py-10 sm:py-11 gap-y-5 gap-x-3"
           >
             <div>
               <svg
@@ -326,7 +374,7 @@
                       <img
                         src="/images/new_arrivals/new_arrivals_1.png"
                         alt=""
-                        class="rounded-medium"
+                        class="rounded-medium w-full"
                       />
                     </div>
                     <!-- Content -->
@@ -427,7 +475,7 @@
                       <img
                         src="/images/new_arrivals/new_arrivals_2.png"
                         alt=""
-                        class="rounded-medium"
+                        class="rounded-medium w-full"
                       />
                     </div>
                     <!-- Content -->
@@ -528,7 +576,7 @@
                       <img
                         src="/images/new_arrivals/new_arrivals_3.png"
                         alt=""
-                        class="rounded-medium"
+                        class="rounded-medium w-full"
                       />
                     </div>
                     <!-- Content -->
@@ -629,7 +677,7 @@
                       <img
                         src="/images/new_arrivals/new_arrivals_4.png"
                         alt=""
-                        class="rounded-medium"
+                        class="rounded-medium w-full"
                       />
                     </div>
                     <!-- Content -->
@@ -757,7 +805,7 @@
                       <img
                         src="/images/top_selling/top_selling_1.png"
                         alt=""
-                        class="rounded-medium"
+                        class="rounded-medium w-full"
                       />
                     </div>
                     <!-- Content -->
@@ -858,7 +906,7 @@
                       <img
                         src="/images/top_selling/top_selling_2.png"
                         alt=""
-                        class="rounded-medium"
+                        class="rounded-medium w-full"
                       />
                     </div>
                     <!-- Content -->
@@ -959,7 +1007,7 @@
                       <img
                         src="/images/top_selling/top_selling_3.png"
                         alt=""
-                        class="rounded-medium"
+                        class="rounded-medium w-full"
                       />
                     </div>
                     <!-- Content -->
@@ -1060,7 +1108,7 @@
                       <img
                         src="/images/top_selling/top_selling_4.png"
                         alt=""
-                        class="rounded-medium"
+                        class="rounded-medium w-full"
                       />
                     </div>
                     <!-- Content -->
@@ -1169,16 +1217,16 @@
       <!-- /Top Selling -->
 
       <!-- Dress Style -->
-      <section class="mb-12 sm:mb-20 container">
+      <section class="mb-12 md:mb-20 container">
         <div
-          class="bg-grey rounded-[40px] px-6 sm:px-16 py-10 sm:pt-20 sm:pb-18"
+          class="bg-grey rounded-[40px] px-6 md:px-16 py-10 md:pt-20 md:pb-18"
         >
           <h2
-            class="text-center font-serif font-bold mb-6 sm:mb-16 text-3xl sm:text-5xl"
+            class="text-center font-serif font-bold mb-6 md:mb-16 text-3xl sm:text-4xl md:text-5xl"
           >
             BROWSE BY dress STYLE
           </h2>
-          <div class="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-3">
+          <div class="grid gap-4 lg:gap-5 grid-cols-1 lg:grid-cols-3">
             <div class="relative">
               <p class="absolute top-6 left-9 font-bold text-4xl">Casual</p>
               <img
@@ -1187,7 +1235,7 @@
                 class="w-full object-cover object-top h-72 rounded-medium"
               />
             </div>
-            <div class="relative sm:col-start-2 sm:col-end-4">
+            <div class="relative lg:col-start-2 lg:col-end-4">
               <p class="absolute top-6 left-9 font-bold text-4xl">Formal</p>
               <img
                 src="/images/dress_style/dress_style_2.png"
@@ -1195,7 +1243,7 @@
                 class="w-full object-cover object-top h-72 rounded-medium"
               />
             </div>
-            <div class="relative sm:col-start-1 sm:col-end-3">
+            <div class="relative lg:col-start-1 lg:col-end-3">
               <p class="absolute top-6 left-9 font-bold text-4xl">Party</p>
               <img
                 src="/images/dress_style/dress_style_3.png"
@@ -1513,12 +1561,12 @@
           class="flex max-md:flex-wrap justify-between bg-black text-white px-6 sm:px-16 py-6 sm:py-9 rounded-medium -translate-y-1/2"
         >
           <h2
-            class="md:basis-6/12 font-bold font-serif text-3xl text-[40px] uppercase mb-8 sm:mb-0"
+            class="lg:basis-6/12 font-bold font-serif text-3xl lg:text-[40px] uppercase mb-8 md:mb-0 pr-3 lg:pr-3"
           >
             STAY UPTO DATE ABOUT OUR LATEST OFFERS
           </h2>
           <div
-            class="md:basis-4/12 basis-full md:ml-auto flex flex-col items-stretch justify-center"
+            class="lg:basis-4/12 basis-full md:ml-auto flex flex-col items-stretch justify-center"
           >
             <div class="relative mb-3.5">
               <span class="absolute top-1/2 -translate-y-1/2 left-4">
@@ -1552,7 +1600,7 @@
       <div
         class="container flex pb-4 sm:pb-12 border-b border-black/10 -mt-32 sm:-mt-12 max-sm:flex-wrap"
       >
-        <div class="basis-full md:basis-3/12 mb-6 sm:mb-0">
+        <div class="basis-full lg:basis-3/12 mb-6 sm:mb-0">
           <a
             href=""
             class="block mb-3.5 sm:mb-6 font-bold font-serif text-3xl sm:text-4xl"
@@ -1642,9 +1690,9 @@
 
         <!-- Footer: Navigations -->
         <nav
-          class="sm:space-x-28 flex basis-full md:basis-9/12 justify-between flex-wrap"
+          class="xl:space-x-28 flex basis-full lg:basis-9/12 lg:justify-between max-lg:flex-wrap"
         >
-          <ul class="text-black-light space-y-4 max-sm:basis-6/12 max-sm:mb-6">
+          <ul class="text-black-light space-y-4 max-lg:basis-6/12 max-lg:mb-6">
             <li class="mb-6 font-medium tracking-[3px] uppercase text-black">
               Company
             </li>
@@ -1653,7 +1701,7 @@
             <li><a href="#">Works</a></li>
             <li><a href="#">Career</a></li>
           </ul>
-          <ul class="text-black-light space-y-4 max-sm:basis-6/12 max-sm:mb-6">
+          <ul class="text-black-light space-y-4 max-lg:basis-6/12 max-lg:mb-6">
             <li class="mb-6 font-medium tracking-[3px] uppercase text-black">
               Help
             </li>
@@ -1662,7 +1710,7 @@
             <li><a href="#">Terms & Conditions</a></li>
             <li><a href="#">Privacy Policy</a></li>
           </ul>
-          <ul class="text-black-light space-y-4 max-sm:basis-6/12 max-sm:mb-6">
+          <ul class="text-black-light space-y-4 max-lg:basis-6/12 max-lg:mb-6">
             <li class="mb-6 font-medium tracking-[3px] uppercase text-black">
               FAQ
             </li>
@@ -1671,7 +1719,7 @@
             <li><a href="#">Orders</a></li>
             <li><a href="#">Payments</a></li>
           </ul>
-          <ul class="text-black-light space-y-4 max-sm:basis-6/12 max-sm:mb-6">
+          <ul class="text-black-light space-y-4 max-lg:basis-6/12 max-lg:mb-6">
             <li class="mb-6 font-medium tracking-[3px] uppercase text-black">
               Resources
             </li>
@@ -1686,10 +1734,10 @@
       <div
         class="container flex justify-center sm:justify-between pt-4 sm:pt-5 pb-16 sm:pb-20 max-sm:flex-wrap"
       >
-        <p class="mb-4 sm:mb-0 text-black-light text-sm">
+        <p class="mb-4 sm:mb-0 text-black-light text-sm pr-3">
           Shop.co © 2000-2023, All Rights Reserved
         </p>
-        <div class="flex">
+        <div class="flex justify-evenly flex-wrap sm:flex-nowrap">
           <img src="/images/payments/payments.png" alt="" />
           <img src="/images/payments/payments-1.png" alt="" />
           <img src="/images/payments/payments-2.png" alt="" />

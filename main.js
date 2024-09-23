@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
       640: {
         perView: 1,
       },
+      1024: {
+        perView: 2,
+      },
     },
   }).mount()
 
@@ -21,11 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     type: 'carousel',
     gap: 20,
     breakpoints: {
+      400: {
+        perView: 1,
+      },
       640: {
         perView: 1,
-        peek: { before: 0, after: 200 },
+        peek: { before: 0, after: 240 },
       },
-      768: {
+      1024: {
         perView: 2,
       },
     },
@@ -37,13 +43,30 @@ document.addEventListener('DOMContentLoaded', () => {
     type: 'carousel',
     gap: 20,
     breakpoints: {
+      400: {
+        perView: 1,
+      },
       640: {
         perView: 1,
-        peek: { before: 0, after: 200 },
+        peek: { before: 0, after: 240 },
       },
-      768: {
+      1024: {
         perView: 2,
       },
     },
   }).mount()
+})
+
+const menuBtn = document.getElementById('menu-btn')
+const mobileMenu = document.getElementById('mobile-menu')
+console.log(menuBtn)
+menuBtn.addEventListener('click', () => {
+  // Toggle max-height to animate open/close
+  if (mobileMenu.classList.contains('max-h-0')) {
+    mobileMenu.classList.remove('max-h-0')
+    mobileMenu.classList.add('max-h-60') // Open animation
+  } else {
+    mobileMenu.classList.add('max-h-0') // Close animation
+    mobileMenu.classList.remove('max-h-60')
+  }
 })
