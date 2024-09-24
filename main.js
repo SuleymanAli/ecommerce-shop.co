@@ -4,19 +4,21 @@ import '@glidejs/glide/dist/css/glide.core.min.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   // Testimonial slider
-  new Glide('.glide', {
-    perView: 3,
-    type: 'carousel',
-    gap: 20,
-    breakpoints: {
-      640: {
-        perView: 1,
+  if (document.querySelector('.glide')) {
+    new Glide('.glide', {
+      perView: 3,
+      type: 'carousel',
+      gap: 20,
+      breakpoints: {
+        640: {
+          perView: 1,
+        },
+        1024: {
+          perView: 2,
+        },
       },
-      1024: {
-        perView: 2,
-      },
-    },
-  }).mount()
+    }).mount()
+  }
 
   // Product slider
   new Glide('.glide-product', {
@@ -59,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const menuBtn = document.getElementById('menu-btn')
 const mobileMenu = document.getElementById('mobile-menu')
-console.log(menuBtn)
+
 menuBtn.addEventListener('click', () => {
   // Toggle max-height to animate open/close
   if (mobileMenu.classList.contains('max-h-0')) {
